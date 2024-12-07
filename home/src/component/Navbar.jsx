@@ -1,6 +1,5 @@
-import "../../css/style-home.css";
-import { Link } from "react-router-dom"
-
+import "../../css/style.css";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -21,26 +20,37 @@ function Navbar() {
       {/* 通知/會員管理/MENU */}
       <nav className="navigation">
         <a href="#news">
-          <img id='news' src="/images/news.png" alt="news" />
+          <img id="news" src="/images/news.png" alt="news" />
         </a>
         <a href="#Group">
-          <img id='Group' src="/images/Group.svg" alt="Group" />
-        </a>
-        <a href="#menu">
-          <img id='menu' src="/images/menu.svg" alt="menu" />
+          <img id="Group" src="/images/Group.svg" alt="Group" />
         </a>
         {/* menu待補 */}
-        <div id="menu">
-
-          <ul>
-            <li><Link to='/Story'>怪談博物館</Link></li>
-            <li><Link to='/Map'>靈異導航</Link></li>
-            <li><Link to='/Forum'>靈異論壇</Link></li>
-            <li><Link to='/Contact'>聯絡我們</Link></li>
-          </ul>
+        <div className="navbar-menu">
+          <button class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <nav class="navigation-menu">
+            <ul class="menu">
+              <li>
+                <Link to="/Story">怪談博物館</Link>
+              </li>
+              <li>
+                <Link to="/Map">靈異導航</Link>
+              </li>
+              <li>
+                <Link to="/Forum">靈異論壇</Link>
+              </li>
+              <li>
+                <Link to="/Contact">聯絡我們</Link>
+              </li>
+            </ul>
+          </nav>
         </div>
       </nav>
     </header>
   );
 }
-export default Navbar
+export default Navbar;

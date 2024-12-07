@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../component/Navbar";
-import "../style.css";
+import "../../css/style.min.css";
 import ArticleList from "../component/ArticleList"; // 引入 ArticleList 組件
 import articles from "../js/articlesData";
 

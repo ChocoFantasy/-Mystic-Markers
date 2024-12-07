@@ -12,7 +12,7 @@ body {
   font-family: $Chinese;
 
   /* 系統預設的無襯線字 */
-  font-size: 100%;
+   font-size: 100%;
   line-height: 1.5;
 
   /* 行高 */
@@ -111,7 +111,6 @@ a {
   padding: 0;
   align-items: center;
   margin-left: 115px;
-
 }
 
 .member {
@@ -139,19 +138,33 @@ a {
   display: flex;
   align-items: center;
 
-
   /* justify-content: ; */
   #Group {
-
-    margin: 10px;
-    width: 26px;
+     margin: 10px;
+     width: 26px;
   }
+  .navbar-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* 漢堡按鈕  */
 
-  #menu {
+    .hamburger {
+      margin-bottom: 10px;
 
-    width: 64px;
-    margin-left: 15px;
+      /*  修改button預設樣式  */
+      background-color: transparent;
+      border: none;
+    }
 
+    .bar {
+      display: block;
+      width: 24px;
+      height: 3px;
+      background-color: #333;
+      margin: 5px auto;
+      transition: 0.35s;
+    }
   }
 }
 
@@ -170,6 +183,7 @@ body {
 }
 
 .forum-layout {
+  width: 100%;
   display: flex;
   gap: 20px;
 
@@ -177,7 +191,7 @@ body {
 }
 
 .sidebar {
-  width: 18%;
+  width: 20%;
 }
 
 .sidebar-content {
@@ -185,6 +199,7 @@ body {
   flex-direction: column;
   gap: 10px;
 }
+
 
 .category-board {
   border: 1.5px solid $grey;
@@ -199,22 +214,24 @@ body {
 }
 
 .category-item {
-  display:flex;
-  flex-direction:row;
+  display: flex;
+  flex-direction: row;
   padding: 5px;
   margin: 5px 0;
   color: $primary-green;
   cursor: pointer;
   transition: color 0.5s ease;
+
   .list-item {
-    display:flex;
+    display: flex;
+
     div {
       width: 24px;
     }
   }
 
   &:hover {
-    background-color:$primary-purple;
+    background-color: $primary-purple;
     border-radius: 3px;
     color: $primary-green;
   }
@@ -230,7 +247,7 @@ body {
 }
 
 .main-content {
-  width: 82%;
+  width: 80%;
   border: 1.5px solid $grey;
   border-radius: 5px;
   padding: 20px;
@@ -273,12 +290,12 @@ body {
 .search-input {
   border: none;
   background: none;
-  color: var(--Neutral-White);
+  color: $light;
   width: 100%;
   padding: 5px;
 
   &::placeholder {
-    color: var(--Neutral-grey);
+    color: $grey;
   }
 }
 
@@ -292,7 +309,7 @@ body {
   display: flex;
   gap: 20px;
   padding: 20px;
-  border-bottom: 1px solid var(--Neutral-grey);
+  border-bottom: 1px solid $grey;
 }
 
 .article-content {
@@ -311,6 +328,7 @@ body {
   align-items: center;
   gap: 10px;
 }
+
 // 作者圖片外形狀
 .author-avatar {
   width: 32px;
@@ -330,12 +348,12 @@ body {
   line-height: 1.5;
   margin-bottom: 15px;
 
-  display: -webkit-box;                  // 讓容器變為多行文本容器
-  -webkit-line-clamp: 1;                 // 限制顯示一行
-  -webkit-box-orient: vertical;          // 設定文本顯示方向為垂直
-  overflow: hidden;                      // 超出部分隱藏
-  text-overflow: ellipsis;               // 超出部分顯示省略號
-  white-space: normal;                   // 確保文本換行
+  display: -webkit-box; // 讓容器變為多行文本容器
+  -webkit-line-clamp: 1; // 限制顯示一行
+  -webkit-box-orient: vertical; // 設定文本顯示方向為垂直
+  overflow: hidden; // 超出部分隱藏
+  text-overflow: ellipsis; // 超出部分顯示省略號
+  white-space: normal; // 確保文本換行
 }
 
 .interaction-bar {
@@ -353,18 +371,18 @@ body {
 
 
 .article-Graphics-text {
-  display: flex;                    
-  justify-content: space-between;     // 左右兩邊間隔
-  align-items: center;           // 垂直對齊
+  display: flex;
+  justify-content: space-between; // 左右兩邊間隔
+  align-items: center; // 垂直對齊
 
   .left {
-    flex: 1;              //left 區塊佔用剩餘空間
-    padding-right: 20px;   //讓內容與右邊距離不要太近
-  } 
+    flex: 1; //left 區塊佔用剩餘空間
+    padding-right: 20px; //讓內容與右邊距離不要太近
+  }
 
-  .right{
+  .right {
     flex-shrink: 0; // 防止 .right 區塊縮小，保持圖片大小
-    width: 85px;   // 可以根據需要設置圖片的寬度
+    width: 85px; // 可以根據需要設置圖片的寬度
   }
 
   .article-image {
@@ -374,14 +392,15 @@ body {
   }
 }
 
-
+// RWD 
 
 @media (max-width: 991px) {
   .forum-layout {
     flex-direction: column;
   }
 
-  .sidebar, .main-content {
+  .sidebar,
+  .main-content {
     width: 100%;
   }
 
@@ -399,5 +418,3 @@ body {
     height: auto;
   }
 }
-
-

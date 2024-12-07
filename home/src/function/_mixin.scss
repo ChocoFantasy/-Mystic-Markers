@@ -1,8 +1,20 @@
-@use'../variables/'as*;
+@use'../variables/' as*;
+
 // 匯入變數不可於index.css中匯入
-@mixin border-b ($width:2px,$color:$primary-green){
+@mixin border-b ($width: 2px, $color: $primary-green) {
     border: $width solid $color;
 }
-@mixin bordered($width:1px,$primary-green){
+
+@mixin bordered($width: 1px, $primary-green) {
     border: $width dashed $color;
+}
+
+@mixin glassmorphism {
+    background-image: linear-gradient(4deg, rgba(255, 255, 255, 0.65), rgba(204, 192, 190, 0.3));
+    box-shadow: 2px 2px 2px 1px rgba(172, 172, 172, 0.3);
+    /* 容器的陰影,第4數為spread延伸模糊陰影 */
+    /* filter: drop-shadow(2px 2px 2px blue); */
+    /* 整個物件包含內部燈有陰影 */
+    backdrop-filter: brightness(120%) blur(5px);
+    /* 背景變亮120%背景模糊3px*/
 }
