@@ -12,7 +12,7 @@ body {
   font-family: $Chinese;
 
   /* 系統預設的無襯線字 */
-   font-size: 100%;
+  font-size: 100%;
   line-height: 1.5;
 
   /* 行高 */
@@ -133,25 +133,24 @@ a {
   }
 }
 
-.navigation {
+.navigation-1 {
   width: 277px;
   display: flex;
   align-items: center;
 
   /* justify-content: ; */
   #Group {
-     margin: 10px;
-     width: 26px;
+    margin: 10px;
+    width: 26px;
   }
 
-  .navbar-menu {
+  .navbar {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 
     .hamburger {
-      margin-bottom: 10px;
-      /*  修改button預設樣式  */
+      // 修改button預設樣式
       background-color: transparent;
       border: none;
 
@@ -159,72 +158,52 @@ a {
         display: block;
         width: 24px;
         height: 3px;
-        background-color: #333;
+        background-color: $deep;
         margin: 5px auto;
-        transition: 0.35s;
+        transform: 0.35s;
       }
 
-      .is-active .bar {
-        &:nth-child(1) {
-          transform: rotate(45deg) translateY(11px);
-        }
-      
-        &:nth-child(2) {
-          opacity: 0;
-        }
-      
-        &:nth-child(3) {
-          transform: rotate(-45deg) translateY(-11px);
-        }
-      }
-      
-    }
+      &.is-active {
+        .bar {
+          &:nth-child(1) {
+            transform: rotate(45deg) translateY(6px) translateX(5px);
+          }
 
-    .menu{
-      display: flex;
-      flex-direction: column;
-      padding: 20px 30px;
-      border-radius: 15px;
+          &:nth-child(2) {
+            opacity: 0;
+          }
 
-      a {
-        color: white;
-        margin: 20px;
+          &:nth-child(3) {
+            transform: rotate(-45deg) translateY(-6px) translateX(5px);
+          }
+        }
       }
     }
 
-    .navigation-menu {
+    .navigation {
       display: none;
-      flex-direction: column;
       align-items: center;
-      background-color: rgba(0, 0, 0, 0.5);
-      border-radius: 15px;
-      animation: hide 0.35s both;
+      padding: 0 0 10px 10px;
+      border-radius: 10px;
+      // 直接寫在 css中， 一開始也不會出現，因為有設定display:none;
+      animation: hide 2s both;
 
-      .show {
+      .menu {
+        flex-direction: column;
+        order: -1;
+      }
+
+      &.show {
         display: flex;
-        animation: show 0.35s both;
+        animation: show 1s both;
       }
-    }
-
-    @keyframes hide {
-      from { 
-        opacity: 1;  
-        display: flex; /*動態顯示*/
-      }
-      to   { 
-        opacity: 0;  
-        display: none;/*動態消失*/ 
-      }
-    }
-    
-    @keyframes show {
-      from { opacity: 0; }
-      to   { opacity: 1; }
     }
   }
 
-
 }
+
+
+
 
 // Forum //
 

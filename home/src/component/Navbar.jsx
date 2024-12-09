@@ -18,7 +18,7 @@ function Navbar() {
         </div>
       </div>
       {/* 通知/會員管理/MENU */}
-      <nav className="navigation">
+      <nav className="navigation-1">
         <a href="#news">
           <img id="news" src="/images/news.png" alt="news" />
         </a>
@@ -26,14 +26,17 @@ function Navbar() {
           <img id="Group" src="/images/Group.svg" alt="Group" />
         </a>
         {/* menu待補 */}
-        <div className="navbar-menu">
-          <button class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
+        <div className="navbar">
+          {/* <!-- 漢堡按鈕 三 > X --> */}
+          <button className="hamburger">
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
           </button>
-          <nav class="navigation-menu">
-            <ul class="menu">
+          {/* <!-- 導覽列 --> */}
+          <nav className="navigation">
+            {/* <!-- 主選單 --> */}
+            <ul className="menu">
               <li>
                 <Link to="/Story">怪談博物館</Link>
               </li>
@@ -50,6 +53,12 @@ function Navbar() {
           </nav>
         </div>
       </nav>
+
+      {/* ju cdn */}
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+      {/* 套件:漢堡按鈕 */}
+      <script src="../js/script.js"></script>
     </header>
   );
 }
