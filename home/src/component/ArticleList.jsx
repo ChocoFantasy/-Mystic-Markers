@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/style.css";
+import "../style.scss";
 
 // ArticleList 組件
 const ArticleList = ({ articles }) => {

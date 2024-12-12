@@ -1,7 +1,14 @@
-import "../../css/style.css";
+import React, { useState } from "react";
+import "../style.scss";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="Topbar">
       <div className="Topbar-right">
@@ -25,17 +32,22 @@ function Navbar() {
         <a href="#Group">
           <img id="Group" src="/images/Group.svg" alt="Group" />
         </a>
-        {/* menu待補 */}
+        {/* Menu */}
         <div className="navbar">
-          {/* <!-- 漢堡按鈕 三 > X --> */}
-          <button className="hamburger">
+          {/* 漢堡按鈕 */}
+          <button
+            className={`hamburger ${isMenuOpen ? "is-active" : ""}`}
+            onClick={toggleMenu}
+          >
             <span className="bar"></span>
             <span className="bar"></span>
             <span className="bar"></span>
           </button>
-          {/* <!-- 導覽列 --> */}
-          <nav className="navigation">
-            {/* <!-- 主選單 --> */}
+          {/* 導覽列 */}
+          <nav
+            className={`navigation ${isMenuOpen ? "show" : ""}`}
+            onClick={() => setIsMenuOpen(false)} // 點擊關閉選單
+          >
             <ul className="menu">
               <li>
                 <Link to="/Story">怪談博物館</Link>
@@ -53,13 +65,8 @@ function Navbar() {
           </nav>
         </div>
       </nav>
-
-      {/* ju cdn */}
-      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-      {/* 套件:漢堡按鈕 */}
-      <script src="../js/script.js"></script>
     </header>
   );
 }
+
 export default Navbar;

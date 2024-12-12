@@ -71,6 +71,8 @@ a {
 /* Menu */
 
 .Topbar {
+  position: relative;
+  z-index: 10;
   margin: 0;
   margin-top: 0;
   width: 100%;
@@ -134,7 +136,7 @@ a {
 }
 
 .navigation-1 {
-  width: 277px;
+  width: 115px;
   display: flex;
   align-items: center;
 
@@ -145,6 +147,7 @@ a {
   }
 
   .navbar {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -153,14 +156,15 @@ a {
       // 修改button預設樣式
       background-color: transparent;
       border: none;
+      cursor:pointer;
 
       .bar {
         display: block;
         width: 24px;
         height: 3px;
-        background-color: $deep;
+        background-color: $light;
         margin: 5px auto;
-        transform: 0.35s;
+        transform: transform 0.35s opacity 0.35s;
       }
 
       &.is-active {
@@ -183,14 +187,41 @@ a {
     .navigation {
       display: none;
       align-items: center;
-      padding: 0 0 10px 10px;
-      border-radius: 10px;
+      justify-content: center;
+      position: absolute; 
+      top:30px;  /* 選單顯示在按鈕下方 */
+      padding: 60px;
+
+      border-radius: 5%;
       // 直接寫在 css中， 一開始也不會出現，因為有設定display:none;
       animation: hide 2s both;
+      background-color: rgba(0,0,0,.65);
 
       .menu {
+
         flex-direction: column;
         order: -1;
+        font-family:$Chinese;
+        font-size: map-get($font-medium-26, font-size);
+        font-weight:500;
+
+        li {
+          list-style:square;
+        }
+        li:before{
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          transform-origin: top left;
+          width: .3333333333em;
+          height: .3333333333em;
+          background-color: #dcff46;
+          border-radius: 2px;
+          transition: .3s width, .1s height .2s;
+        }
+      
       }
 
       &.show {
@@ -276,7 +307,6 @@ body {
 
 .ad-section {
   aspect-ratio: 1/2;
-  background-color: #784a4e;
   border-radius: 5px;
   display: flex;
   align-items: center;
